@@ -1,14 +1,14 @@
-# APLICAÇÃO BACK-END COM NODEJS, QUE ULTILIZA O EPRESS, PRISMA ORM, PASSPORT E TYPESCRIPT
+## APLICAÇÃO BACK-END COM NODEJS, QUE ULTILIZA O EPRESS, PRISMA ORM, PASSPORT E TYPESCRIPT
 
-## Techs
+### Techs
 
--Node.js
--Express 
--PrismaORM 
--Passport 
--TypeScript
+- Node.js
+- Express 
+- PrismaORM 
+- Passport 
+- TypeScript
 
-## Banco de dados SQLite
+### Banco de dados SQLite
 
 
 ## Configuração do Projeto
@@ -24,18 +24,22 @@
 
 ### Configurar as variáveis ambiente
 
-DATABASE_URL="postgresql://usuario:senha@localhost:5432/meubanco"
+```
+EXPRESS_SECRET_SESSSION="suaSecret"
 GOOGLE_CLIENT_ID="seu_google_client_id"
 GOOGLE_CLIENT_SECRET="seu_google_client_secret"
+```
 
 
 ### Configuração do Prisma
 
+```
 npx prisma migrate dev --name init
 npx prisma generate
+```
 
 
-### Iniciar o servidor
+#### Iniciar o servidor
 
 ```
   npm run dev
@@ -45,24 +49,28 @@ npx prisma generate
 
 
 #### Processo de cadastro/login 
-http://localhost:3000/auth/google
+
+```
+GET http://localhost:3000/auth/google
+```
 
 #### Verificar se o usuário está logado, retornando os dados 
 
+```
 GET http://localhost:3000/profile
+```
 
 
 #### LOGOUT 
 
+```
 GET http://localhost:3000/logout
-
-
-
-####
+```
 
 
 ## ESTRUTURA DE PASTAS
 
+```
 node-express-prisma-passport/
 ├── prisma/
 │   └── schema.prisma
@@ -81,3 +89,4 @@ node-express-prisma-passport/
 ├── package.json
 ├── tsconfig.json
 └── node_modules/
+```
